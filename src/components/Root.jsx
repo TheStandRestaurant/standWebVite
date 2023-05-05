@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, Typography } from '@mui/material';
+import { Avatar, Box, Divider, Typography } from '@mui/material';
 import { Link, Outlet } from 'react-router-dom';
 
 const Root = () => {
@@ -11,16 +11,34 @@ const Root = () => {
             <Box
                 sx={{
                     display: 'flex',
-                    width: '100',
-                    justifyContent: 'space-between',
+                    justifyContent: 'flex-end',
+                    height: '100px',
+                    width: '100%',
+                    // bgcolor: 'black',
                 }}
             >
-                <StyledLink to="/">Home</StyledLink>
-
-                <StyledLink to="/contact">Contact</StyledLink>
+                <Avatar
+                    sx={{
+                        m: '5px 15px',
+                        position: 'absolute',
+                        left: '0',
+                        height: '90px',
+                        width: '90px',
+                        '& .MuiAvatar-img': { height: '100%', width: '100%' },
+                    }}
+                    alt="stand mini logo"
+                    src="/public/stand.png"
+                />
+                <Typography sx={{ m: '50px 15px' }}>
+                    <StyledLink to="/">Home</StyledLink>
+                </Typography>
+                <Typography sx={{ m: '50px 15px' }}>
+                    <StyledLink to="/contact">Contact</StyledLink>
+                </Typography>
             </Box>
+            <Divider />
 
-            <Box>
+            <Box sx={{ height: '90vh' }}>
                 <Outlet />
             </Box>
         </>
