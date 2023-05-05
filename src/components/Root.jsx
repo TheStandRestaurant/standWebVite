@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { Avatar, Box, Divider, Typography } from '@mui/material';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const Root = () => {
+    const location = useLocation();
     const StyledLink = styled(Link)`
         text-decoration: none;
     `;
@@ -27,13 +28,25 @@ const Root = () => {
                         '& .MuiAvatar-img': { height: '100%', width: '100%' },
                     }}
                     alt="stand mini logo"
-                    src="/public/stand.png"
+                    src="/stand.png"
                 />
-                <Typography sx={{ m: '50px 15px' }}>
-                    <StyledLink to="/">Home</StyledLink>
-                </Typography>
+                {location.pathname === '/' ? (
+                    <Typography sx={{ m: '50px 15px' }}>
+                        <StyledLink to="/menu">Menu</StyledLink>
+                    </Typography>
+                ) : (
+                    <Typography sx={{ m: '50px 15px' }}>
+                        <StyledLink to="/">Home</StyledLink>
+                    </Typography>
+                )}
                 <Typography sx={{ m: '50px 15px' }}>
                     <StyledLink to="/contact">Contact</StyledLink>
+                </Typography>
+                <Typography sx={{ m: '50px 15px' }}>
+                    <StyledLink to="/catering">Catering</StyledLink>
+                </Typography>
+                <Typography sx={{ m: '50px 15px' }}>
+                    <StyledLink to="/merch">Merch</StyledLink>
                 </Typography>
             </Box>
             <Divider />

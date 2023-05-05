@@ -4,15 +4,19 @@ import Grid from '@mui/material/Unstable_Grid2';
 function Main() {
     return (
         <>
-            <Grid sx={{ m: '1em' }} container spacing={{ xs: 0, sm: 1, md: 5 }}>
-                <Grid item xs={12} md={4}>
+            <Grid
+                sx={{ m: '0em 1em' }}
+                container
+                spacing={{ xs: 0, sm: 1, md: 5 }}
+            >
+                <Grid xs={12} md={4}>
                     <Box>
                         <Typography
                             component="h1"
                             sx={{
                                 textAlign: 'center',
                                 fontFamily: 'Montserrat',
-                                // fontWeight: 'bold',
+                                fontWeight: '500',
                                 fontSize: '2em',
                                 letterSpacing: '7px',
                                 m: '1em',
@@ -48,19 +52,21 @@ function Main() {
                     </Box>
                     <Box
                         component="img"
+                        alt="example food photo"
                         sx={{ width: '100%' }}
-                        src={'/public/foodexample.png'}
+                        src={'/foodexample.png'}
                     ></Box>
                 </Grid>
 
-                <Grid item xs={12} md={8}>
+                <Grid xs={12} md={8}>
                     <Box
                         component="img"
                         sx={{
-                            maxHeight: '90%',
-                            width: '100%',
+                            maxHeight: { xl: '90', sm: 'auto' },
+                            width: { xs: '100%' },
                         }}
-                        src={'/public/mainStand.png'}
+                        src={'/mainStand.png'}
+                        alt="placeholder"
                     ></Box>
                 </Grid>
             </Grid>
