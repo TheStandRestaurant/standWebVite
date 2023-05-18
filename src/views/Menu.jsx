@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { getItems } from '../services/items';
+import { Typography } from '@mui/material';
 
 function Menu() {
     const [items, setItems] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await getItems();
@@ -21,7 +23,9 @@ function Menu() {
                     width: '50%',
                     bgcolor: 'blue',
                 }}
-            ></Grid>
+            >
+                <Typography name="drinks"></Typography>
+            </Grid>
             <Grid
                 sx={{
                     height: '200px',
